@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omniConvert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans p-6 md:p-12">
+  
+  <div class="max-w-4xl mx-auto">
+    
+    
+    <div class="mb-6 text-left">
+      <h1 class="text-3xl font-medium text-slate-800 tracking-tight" id="header">
+        <! -- Main header text will be set by JavaScript --  > 
+      </h1>
+    </div>
+
+    
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+      
+      <!-- Left Column: Input Form Card -->
+      <div id="inputs" class="md:col-span-6 bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
+        <form id="form" class="space-y-4">
+          
+          
+          <div class="grid grid-cols-3 items-center gap-4">
+            <label for="amount" class="text-base font-bold text-slate-800">Amount</label>
+            <input 
+              type="text" 
+              id="amount" 
+              name="amount" 
+              placeholder="Enter amount"
+              class="col-span-2 px-3 py-2 bg-white border border-slate-300 rounded focus:outline-none focus:border-blue-500 text-slate-700"
+            />
+          </div>
+
+          
+          <div class="grid grid-cols-3 items-center gap-4">
+            <label for="categoryFilterFrom" id="fromLabel" class="text-base font-bold text-slate-800">From</label>
+            <select 
+              id="From" 
+              class="col-span-2 px-3 py-2 bg-white border border-slate-300 rounded focus:outline-none focus:border-blue-500 text-slate-700"
+            >
+              <option value="day" selected>Days</option>
+              <option value="week">Weeks</option>
+              <option value="month">Months</option>
+              <option value="year">Years</option>
+              <option value="decade">Decades</option> 
+              <option value="century">Centuries</option>
+              <option value="millennium">Millennia</option>   
+              <option value="second">Seconds</option>
+              <option value="minute">Minutes</option>
+              <option value="hour">Hours</option>
+              <option value="microsecond">Microseconds</option>
+              <option value="nanosecond">Nanoseconds</option>
+              <option value="milisecond">Milliseconds</option>
+              <option value="hrsminutesseconds">Hours:Minutes:Seconds</option>
+              <option value="day">Days</option>
+            </select>
+          </div>
+               
+          
+          <div class="grid grid-cols-3 items-center gap-4">
+            <label for="categoryFilterTo" id="toLabel" class="text-base font-bold text-slate-800">To</label>
+            <select 
+              id="To"
+              class="col-span-2 px-3 py-2 bg-white border border-slate-300 rounded focus:outline-none focus:border-blue-500 text-slate-700"
+            >
+              <option value="day">Days</option>
+              <option value="week">Weeks</option>
+              <option value="month" selected>Months</option>
+              <option value="year">Years</option>
+              <option value="decade">Decades</option> 
+              <option value="century">Centuries</option>
+              <option value="millennium">Millennia</option>   
+              <option value="second">Seconds</option>
+              <option value="minute">Minutes</option>
+              <option value="hour">Hours</option>
+              <option value="microsecond">Microseconds</option>
+              <option value="nanosecond">Nanoseconds</option>
+              <option value="milisecond">Milliseconds</option>
+              <option value="hrsminutesseconds">Hours:Minutes:Seconds</option>
+            </select>
+          </div>
+
+          
+          <div class="grid grid-cols-3 gap-4 pt-2">
+            <div class="col-start-2 col-span-2 flex flex-col items-center space-y-3">
+              <button 
+                type="submit" 
+                id="submit"
+                class="w-full bg-[#007bff] hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition duration-150 shadow-sm"
+              >
+                Calculate
+              </button>  
+              
+              
+              <a href="#" class="text-blue-600 hover:underline text-sm flex items-center gap-1">
+                swap units 
+                <svg xmlns="http://w3.org" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.25 15M21 12a9 9 0 11-18 0l3-3m0 0l-3-3m3 3H9" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </form> 
+      </div>
+
+      
+      <div class="md:col-span-6 flex flex-col space-y-4">
+        <!-- Results Card -->
+        <div class="bg-gray-100 border border-gray-200 rounded-lg p-5">
+          <p class="text-slate-700 text-lg" id="result">
+
+            <!-- Result will be displayed here -->
+          </p>
+          
+        </div>
+
+       
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
